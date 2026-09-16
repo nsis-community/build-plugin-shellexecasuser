@@ -1,0 +1,4 @@
+ShellExecAsUser plug-in, from the NSIS wiki.
+
+The upstream source states no license. This repository is a build test
+fixture for nsis-dev/build-plugin and grants none either.
