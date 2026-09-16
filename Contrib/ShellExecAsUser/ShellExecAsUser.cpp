@@ -133,13 +133,13 @@ static LRESULT WndProc(HWND hWnd, UINT uMsg,WPARAM wParam, LPARAM lParam)
 		case WM_CREATE:
 		{
 			void* param = ((LPCREATESTRUCT)lParam)->lpCreateParams;
-			::SetWindowLongPtr(hWnd, GWL_USERDATA, (LONG_PTR)param);
+			::SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)param);
 			break;
 		}
 		case WM_USER+10:
 		{
 			ExecShellParams* p = (ExecShellParams*)lParam;
-			IShellDispatch2* pSD = (IShellDispatch2*)::GetWindowLongPtr(hWnd, GWL_USERDATA);
+			IShellDispatch2* pSD = (IShellDispatch2*)::GetWindowLongPtr(hWnd, GWLP_USERDATA);
 			runCommand(pSD, p);
 			delete p;
 			break;
